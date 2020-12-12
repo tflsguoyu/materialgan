@@ -1,8 +1,10 @@
 # MaterialGAN: Reflectance Capture using a Generative SVBRDF Model
 
 [Yu Guo](https://www.ics.uci.edu/~yug10/), Cameron Smith, [Miloš Hašan](http://miloshasan.net/), [Kalyan Sunkavalli](http://www.kalyans.org/) and [Shuang Zhao](https://shuangz.com/). 
-In ACM Transactions on Graphics (SIGGRAPH Asia 2020). 
-[[Project page]](https://shuangz.com/projects/materialgan-sa20/)
+
+In ACM Transactions on Graphics (SIGGRAPH Asia 2020). [[Project page]](https://shuangz.com/projects/materialgan-sa20/)
+
+<img src="https://www.ics.uci.edu/~yug10/webpage/suppl/2020TOG/teaser.png" width="500px">
 
 ## Overview
 We don't provide the codes for GAN training, please refer to [StyleGAN2](https://github.com/NVlabs/stylegan2).
