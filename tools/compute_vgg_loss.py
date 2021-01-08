@@ -1,3 +1,9 @@
+# Outputs:
+# vgg loss between target and test1: 0.3948165476322174
+# vgg loss between target and test2: 0.44597795605659485
+# vgg loss between target and test3: 0.713489830493927
+# vgg loss between target and test4: 0.9643082022666931
+
 import numpy as np
 import torch as th
 from torchvision.models import vgg19
@@ -5,7 +11,7 @@ from torchvision.transforms import Normalize
 from PIL import Image
 
 def main():
-    data_dir = '../data/'
+    data_dir = '../data/vggloss/'
 
     device = th.device("cuda:0" if th.cuda.is_available() else "cpu")
 
@@ -17,11 +23,11 @@ def main():
         p.requires_grad = False
     criterion = th.nn.L1Loss().to(device)
 
-    target = th.from_numpy(np.array(Image.open(data_dir+'vggloss_target.jpg')).astype(np.float32)/255).permute(2,0,1).to(device)
-    test1 = th.from_numpy(np.array(Image.open(data_dir+'vggloss_test1.jpg')).astype(np.float32)/255).permute(2,0,1).to(device)
-    test2 = th.from_numpy(np.array(Image.open(data_dir+'vggloss_test2.jpg')).astype(np.float32)/255).permute(2,0,1).to(device)
-    test3 = th.from_numpy(np.array(Image.open(data_dir+'vggloss_test3.jpg')).astype(np.float32)/255).permute(2,0,1).to(device)
-    test4 = th.from_numpy(np.array(Image.open(data_dir+'vggloss_test4.jpg')).astype(np.float32)/255).permute(2,0,1).to(device)
+    target = th.from_numpy(np.array(Image.open(data_dir+'target.jpg')).astype(np.float32)/255).permute(2,0,1).to(device)
+    test1 = th.from_numpy(np.array(Image.open(data_dir+'test1.jpg')).astype(np.float32)/255).permute(2,0,1).to(device)
+    test2 = th.from_numpy(np.array(Image.open(data_dir+'test2.jpg')).astype(np.float32)/255).permute(2,0,1).to(device)
+    test3 = th.from_numpy(np.array(Image.open(data_dir+'test3.jpg')).astype(np.float32)/255).permute(2,0,1).to(device)
+    test4 = th.from_numpy(np.array(Image.open(data_dir+'test4.jpg')).astype(np.float32)/255).permute(2,0,1).to(device)
 
     target_vgg = vggFeature(target)
     test1_vgg = vggFeature(test1)
