@@ -18,3 +18,6 @@ Or generate your own inputs by using `tool/generate_inputs.py`
 
 ## Optimization
 To get the SVBRDF maps by optimization, please try `script_optim_ours.py`
+
+## Updates 
+02/04/2021: This is not the cleanup version. If you have difficulty running the codes or have questions about the codes/data/parameters, please send an email to Yu Guo (tflsguoyu@gmail.com). Sorry for the inconvenience.
