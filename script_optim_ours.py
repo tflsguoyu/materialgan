@@ -10,7 +10,7 @@ def gyListNames(in_dir):
 
 root_dir = 'data/'
 in_dir  = root_dir + 'in/'
-out_dir = root_dir + 'out/ours7_avg_optimW+only/'
+out_dir = root_dir + 'out/ours7_avg_optimW+N/'
 init_dir = root_dir + 'out/embed_egsr7/'
 cp_dir  = root_dir + 'pretrain/'
 vgg_dir = cp_dir + 'vgg_conv.pt'
@@ -18,7 +18,7 @@ vgg_dir = cp_dir + 'vgg_conv.pt'
 N = 7
 epochs = 2000
 epochW = 10
-epochN = 0
+epochN = 10
 loss = [1000, 0.001, -1, -1]
 lr = 0.02
 
