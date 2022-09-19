@@ -6,7 +6,7 @@ In ACM Transactions on Graphics (SIGGRAPH Asia 2020).
 
 <img src="https://github.com/tflsguoyu/materialgan_suppl/blob/master/github/teaser.jpg" width="1000px">
 
-[[paper](https://github.com/tflsguoyu/materialgan_paper/blob/master/materialgan.pdf)]
+[[Paper](https://github.com/tflsguoyu/materialgan_paper/blob/master/materialgan.pdf)]
 [[Code](https://github.com/tflsguoyu/materialgan)]
 [[Supplemental Materials](https://tflsguoyu.github.io/materialgan_suppl/)]
 [[Poster](https://github.com/tflsguoyu/layeredbsdf_poster/blob/master/materialgan_poster.pdf)]
