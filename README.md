@@ -9,7 +9,7 @@ In ACM Transactions on Graphics (SIGGRAPH Asia 2020).
 [[Paper](https://github.com/tflsguoyu/materialgan_paper/blob/master/materialgan.pdf)]
 [[Code](https://github.com/tflsguoyu/materialgan)]
 [[Supplemental Materials](https://tflsguoyu.github.io/materialgan_suppl/)]
-[[Poster](https://github.com/tflsguoyu/layeredbsdf_poster/blob/master/materialgan_poster.pdf)]
+[[Poster](https://github.com/tflsguoyu/materialgan_poster/blob/master/materialgan_poster.pdf)]
 [[Fastforward on Siggraph Asia 2020](https://youtu.be/v5u6LYCN_PU) ([Slides](https://www.dropbox.com/s/zirw16peipdtq70/layeredbsdf_ff.pptx?dl=0))]
 
 [[Presentation on Siggraph Asia 2020]() ([Slides](https://www.dropbox.com/s/i8h4h9jph1np3dt/layeredbsdf_main.pptx?dl=0))]
