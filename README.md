@@ -10,8 +10,8 @@ In ACM Transactions on Graphics (SIGGRAPH Asia 2020).
 [[Code](https://github.com/tflsguoyu/materialgan)]
 [[Supplemental Materials](https://tflsguoyu.github.io/materialgan_suppl/)]
 [[Poster](https://github.com/tflsguoyu/materialgan_poster/blob/master/materialgan_poster.pdf)]
-[[Fastforward on Siggraph Asia 2020](https://youtu.be/fD6CTb1DlbE) ([Slides](https://www.dropbox.com/s/qi594y27dqa7irf/materialgan_ff.pptx?dl=0))] \
-[[Presentation on Siggraph Asia 2020](https://youtu.be/CrAoVsJf0Zw) ([Slides](https://www.dropbox.com/s/zj2mhrminoamrdg/materialgan_main.pptx?dl=0))]
+[Fastforward on Siggraph Asia 2020 ([Video](https://youtu.be/fD6CTb1DlbE))([Slides](https://www.dropbox.com/s/qi594y27dqa7irf/materialgan_ff.pptx?dl=0))] \
+[Presentation on Siggraph Asia 2020 ([Video](https://youtu.be/CrAoVsJf0Zw))([Slides](https://www.dropbox.com/s/zj2mhrminoamrdg/materialgan_main.pptx?dl=0))]
 
 ## Overview
 We don't provide the codes for GAN training, please refer to [StyleGAN2](https://github.com/NVlabs/stylegan2).
@@ -27,4 +27,6 @@ Or generate your own inputs by using `tool/generate_inputs.py`
 To get the SVBRDF maps by optimization, please try `script_optim_ours.py`
 
 ## Notes 
-09/19/2022: Pretrained model link is updated. If you have difficulty running the codes or have questions about the codes/data/parameters, please send an email to Yu Guo (tflsguoyu@gmail.com). Sorry for the inconvenience.
+  - 09/19/2022: Pretrained model link is updated. 
+  - 09/19/2022: TODO: Clean up codes.
+  - Welcome to report bugs and leave comments (Yu Guo: tflsguoyu@gmail.com)
