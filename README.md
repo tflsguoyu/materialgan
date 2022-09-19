@@ -10,8 +10,7 @@ In ACM Transactions on Graphics (SIGGRAPH Asia 2020).
 [[Code](https://github.com/tflsguoyu/materialgan)]
 [[Supplemental Materials](https://tflsguoyu.github.io/materialgan_suppl/)]
 [[Poster](https://github.com/tflsguoyu/materialgan_poster/blob/master/materialgan_poster.pdf)]
-[[Fastforward on Siggraph Asia 2020](https://youtu.be/fD6CTb1DlbE) ([Slides](https://www.dropbox.com/s/qi594y27dqa7irf/materialgan_ff.pptx?dl=0))]
-
+[[Fastforward on Siggraph Asia 2020](https://youtu.be/fD6CTb1DlbE) ([Slides](https://www.dropbox.com/s/qi594y27dqa7irf/materialgan_ff.pptx?dl=0))] \
 [[Presentation on Siggraph Asia 2020](https://youtu.be/CrAoVsJf0Zw) ([Slides](https://www.dropbox.com/s/zj2mhrminoamrdg/materialgan_main.pptx?dl=0))]
 
 ## Overview
