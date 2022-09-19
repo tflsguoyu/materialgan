@@ -18,10 +18,10 @@ In ACM Transactions on Graphics (SIGGRAPH Asia 2020).
 We don't provide the codes for GAN training, please refer to [StyleGAN2](https://github.com/NVlabs/stylegan2).
 
 ## Pretrained model
-Please download pretrained model and other necessary files [here](https://www.ics.uci.edu/~yug10/webpage/suppl/2020TOG/pretrained.zip).
+Please download pretrained model and other necessary files [here](https://www.dropbox.com/s/mqlhmrn2hu6k6p9/pretrained.zip?dl=0).
 
 ## Input data
-Please download real inputs from our paper [here](https://www.ics.uci.edu/~yug10/webpage/suppl/2020TOG/real_input.zip).
+Please download real inputs from our paper [here](https://www.dropbox.com/s/6k3n5xntelqeypk/in.zip?dl=0).
 Or generate your own inputs by using `tool/generate_inputs.py`
 
 ## Optimization
