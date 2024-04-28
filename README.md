@@ -23,7 +23,7 @@ We don't provide the codes for GAN training, please refer to [StyleGAN2](https:/
 Please download pretrained model and other necessary files.
  - Download [`materialgan.pth`](https://www.dropbox.com/scl/fi/z41e6tedyh7m57vatse7p/materialgan.pth?rlkey=ykovb3owafmz6icvss13sdddl&dl=0) to `data/pretrain` folder.
  - Also download [`latent_avg_W+_256.pt`](https://www.dropbox.com/scl/fi/nf4kfoiqx6h7baxpbfu01/latent_avg_W-_256.pt?rlkey=ot0yfkbgq47vt45huh65mgwit&st=724ubgqp&dl=0), [`latent_const_W+_256.pt`](https://www.dropbox.com/scl/fi/mdh8boshpfc6lwktrfh4i/latent_const_W-_256.pt?rlkey=gy55tp5h6c91icxhdzzbf5sss&st=hzxk2580&dl=0), [`latent_const_N_256.pt`](https://www.dropbox.com/scl/fi/320aov4ahc4wkhaq8mpve/latent_const_N_256.pt?rlkey=ckydqxdpyvzy7kns2h0geuh4e&st=d7ytmxz5&dl=0) to `data/pretrain` folder for initialization. 
- - Download [`vgg_conv.pt`] to `data/pretrain` folder for VGG loss computing.
+ - Download [`vgg_conv.pt`](https://www.dropbox.com/scl/fi/hp8bxxyejkw7d9a9gxxhc/vgg_conv.pt?rlkey=pbdqgh8huhdpnihwgdhn2a08v&st=r14omjo7&dl=0) to `data/pretrain` folder for VGG loss computing.
 
 ## Input data
 Please download real inputs from our paper [here](https://drive.google.com/file/d/1ShQ085ln2xRqPJVF1OQETFQlMYCgoep5/view?usp=sharing).
