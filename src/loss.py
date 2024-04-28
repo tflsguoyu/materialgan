@@ -8,6 +8,8 @@ import kornia
 
 np.set_printoptions(precision=4, suppress=True)
 
+device = th.device("cuda:0" if th.cuda.is_available() else "cpu")
+
 def plotAndSave(loss, save_dir):
     plt.figure(figsize=(8,4))
     for i in range(loss.shape[1]):
@@ -46,7 +48,7 @@ class Losses:
         self.size = size
         self.lp = lp
         self.cp = cp
-        self.criterion = th.nn.MSELoss().cuda()
+        self.criterion = th.nn.MSELoss().to(device)
 
         self.precompute()
 
@@ -68,7 +70,10 @@ class Losses:
         for p in self.SL.parameters():
             p.requires_grad = False
 
-        self.LPIPS = models.PerceptualLoss(model='net-lin', net='alex', use_gpu=True, gpu_ids=[0])
+        if device == "cuda:0":
+            self.LPIPS = models.PerceptualLoss(model='net-lin', net='alex', use_gpu=True, gpu_ids=[0])
+        else:
+            self.LPIPS = models.PerceptualLoss(model='net-lin', net='alex', use_gpu=False)
         self.Laplacian = kornia.filters.Laplacian(3, normalized=False)
 
         if self.args.embed_tex:
@@ -125,26 +130,26 @@ class Losses:
     def eval_render_jitter(self, textures, li):
 
         renderOBJ = Microfacet(res=self.res, size=self.size)
-        rendered = th.zeros(self.args.num_render_used, 3, self.res, self.res).cuda()
+        rendered = th.zeros(self.args.num_render_used, 3, self.res, self.res)
         for i in range(self.args.num_render_used):
             lp_this = self.lp[i,:]
-            rendered[i,:] = renderOBJ.eval(textures, lightPos=lp_this, cameraPos=self.cp[i,:], light=th.from_numpy(li).cuda())
+            rendered[i,:] = renderOBJ.eval(textures, lightPos=lp_this, cameraPos=self.cp[i,:], light=th.from_numpy(li).to(device))
 
         renderOBJ_jitter = Microfacet(res=self.res, size=self.size)
-        rendered_jitter = th.zeros(self.args.num_render_used, 3, self.res, self.res).cuda()
+        rendered_jitter = th.zeros(self.args.num_render_used, 3, self.res, self.res).to(device)
         for i in range(self.args.num_render_used):
             lp_this = self.lp[i,:] + np.random.randn(*self.lp[i,:].shape) * 0.1
-            rendered_jitter[i,:] = renderOBJ_jitter.eval(textures, lightPos=lp_this, cameraPos=self.cp[i,:], light=th.from_numpy(li).cuda())
+            rendered_jitter[i,:] = renderOBJ_jitter.eval(textures, lightPos=lp_this, cameraPos=self.cp[i,:], light=th.from_numpy(li).to(device))
 
         return rendered.clamp(eps,1)**(1/2.2), rendered_jitter.clamp(eps,1)**(1/2.2)
 
     def eval_render(self, textures, li):
 
         renderOBJ = Microfacet(res=self.res, size=self.size)
-        rendered = th.zeros(self.args.num_render_used, 3, self.res, self.res).cuda()
+        rendered = th.zeros(self.args.num_render_used, 3, self.res, self.res).to(device)
         for i in range(self.args.num_render_used):
             lp_this = self.lp[i,:]
-            rendered[i,:] = renderOBJ.eval(textures, lightPos=lp_this, cameraPos=self.cp[i,:], light=th.from_numpy(li).cuda())
+            rendered[i,:] = renderOBJ.eval(textures, lightPos=lp_this, cameraPos=self.cp[i,:], light=th.from_numpy(li).to(device))
         return rendered.clamp(eps,1)**(1/2.2)
 
 

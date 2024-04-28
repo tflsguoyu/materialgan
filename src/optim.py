@@ -10,6 +10,9 @@ np.set_printoptions(precision=4, suppress=True)
 
 # th.autograd.set_detect_anomaly(True)
 
+device = th.device("cuda:0" if th.cuda.is_available() else "cpu")
+
+
 def save_args(args, dir):
     with open(dir, 'w') as f:
         json.dump(args.__dict__, f, indent=2)
@@ -42,7 +45,7 @@ def loadTarget(in_dir, res, num_render):
     rendered = th.zeros(num_render, 3, res, res)
     for i in range(num_render):
         rendered[i,:] = loadTargetToTensor(os.path.join(in_dir,'%02d.png' % i), res)
-    rendered = rendered.cuda()
+    rendered = rendered.to(device)
 
     texture_fn = os.path.join(in_dir, 'tex.png')
     if os.path.exists(texture_fn):
@@ -69,12 +72,12 @@ def initTexture(init_from, res):
 def initLatent(genObj, type, init_from):
     if init_from == 'random':
         if type == 'z':
-            latent = th.randn(1,512).cuda()
+            latent = th.randn(1,512).to(device)
         elif type == 'w':
-            latent = th.randn(1,512).cuda()
+            latent = th.randn(1,512).to(device)
             latent = genObj.net.mapping(latent)
         elif type == 'w+':
-            latent = th.randn(1,512).cuda()
+            latent = th.randn(1,512).to(device)
             latent = genObj.net.mapping(latent)
             latent = genObj.net.truncation(latent)
         else:
@@ -82,7 +85,7 @@ def initLatent(genObj, type, init_from):
             exit()
     else:
         if os.path.exists(init_from):
-            latent = th.load(init_from).cuda()
+            latent = th.load(init_from, map_location=device)
         else:
             print('Can not find latent vector ', init_from)
             exit()
@@ -130,9 +133,6 @@ def optim(args):
     th.manual_seed(args.seed)
 
     now = datetime.now(); print(now)
-
-    if args.gpu > -1:
-        th.cuda.set_device(args.gpu)
 
     mat = args.mat_fn
     res = args.im_res
@@ -263,7 +263,6 @@ if __name__ == '__main__':
     parser.add_argument('--mat_fn', type=str, default='')
     parser.add_argument('--out_dir', required=True)
     parser.add_argument('--vgg_weight_dir', required=True)
-    parser.add_argument('--gpu', type=int, default=0)
     parser.add_argument('--im_res', type=int, default=256)
     parser.add_argument('--epochs', type=int, default=100)
     parser.add_argument('--lr', type=float, default=1e-2)

@@ -20,17 +20,19 @@ In ACM Transactions on Graphics (SIGGRAPH Asia 2020).
 We don't provide the codes for GAN training, please refer to [StyleGAN2](https://github.com/NVlabs/stylegan2).
 
 ## Pretrained model
-Please download pretrained model and other necessary files [here](https://www.dropbox.com/s/mqlhmrn2hu6k6p9/pretrained.zip?dl=0).
+Please download pretrained model and other necessary files.
+ - Download [`materialgan.pth`](https://www.dropbox.com/scl/fi/z41e6tedyh7m57vatse7p/materialgan.pth?rlkey=ykovb3owafmz6icvss13sdddl&dl=0) to `data/pretrain` folder.
+ - Also download [`latent_avg_W+_256.pt`](https://www.dropbox.com/scl/fi/nf4kfoiqx6h7baxpbfu01/latent_avg_W-_256.pt?rlkey=ot0yfkbgq47vt45huh65mgwit&st=724ubgqp&dl=0), [`latent_const_W+_256.pt`](https://www.dropbox.com/scl/fi/mdh8boshpfc6lwktrfh4i/latent_const_W-_256.pt?rlkey=gy55tp5h6c91icxhdzzbf5sss&st=hzxk2580&dl=0), [`latent_const_N_256.pt`](https://www.dropbox.com/scl/fi/320aov4ahc4wkhaq8mpve/latent_const_N_256.pt?rlkey=ckydqxdpyvzy7kns2h0geuh4e&st=d7ytmxz5&dl=0) to `data/pretrain` folder for initialization. 
+ - Download [`vgg_conv.pt`] to `data/pretrain` folder for VGG loss computing.
 
 ## Input data
-Please download real inputs from our paper [here](https://www.dropbox.com/s/6k3n5xntelqeypk/in.zip?dl=0).
+Please download real inputs from our paper [here](https://drive.google.com/file/d/1ShQ085ln2xRqPJVF1OQETFQlMYCgoep5/view?usp=sharing).
 Or generate your own inputs by using `tool/generate_inputs.py`
 
 ## Optimization
-To get the SVBRDF maps by optimization, please try `script_optim_ours.py`
+To get the SVBRDF maps by optimization, please try `run.py`
 
 ## Notes 
   - 12/30/2023: This repo will not be maintained anymore. Please move to our new repo: [https://github.com/tflsguoyu/svbrdf-diff-renderer](https://github.com/tflsguoyu/svbrdf-diff-renderer)
-  - 09/19/2022: Pretrained model link is updated. 
-  - 09/19/2022: TODO: Clean up codes.
+  - 04/07/2024: All the links are updated. 
   - Welcome to report bugs and leave comments (Yu Guo: tflsguoyu@gmail.com)

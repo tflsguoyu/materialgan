@@ -590,8 +590,8 @@ MODEL_POOL = {
         'fused_modulate': True,
     },
     'svbrdf': {
-        'weight_path': 'data/pretrain/pytorch/svbrdf.pth',
-        'tf_weight_path': 'data/pretrain/tensorflow/svbrdf.pkl',
+        'weight_path': 'data/pretrain/materialgan.pth',
+        'tf_weight_path': '',
         'tf_code_path': os.path.join(BASE_DIR, 'stylegan2_tf_official'),
         'gan_type': 'stylegan2',
         'dataset_name': 'svbrdf',

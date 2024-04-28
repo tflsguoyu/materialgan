@@ -1,5 +1,7 @@
 from util import *
 
+device = th.device("cuda:0" if th.cuda.is_available() else "cpu")
+
 def tex2map(tex):
     albedo = ((tex[:,0:3,:,:].clamp(-1,1) + 1) / 2) ** 2.2
 
@@ -29,7 +31,7 @@ class Microfacet:
         self.initGeometry()
 
     def initGeometry(self):
-        tmp = th.arange(self.res, dtype=th.float32).cuda()
+        tmp = th.arange(self.res, dtype=th.float32).to(device)
         tmp = ((tmp + 0.5) / self.res - 0.5) * self.size
         y, x = th.meshgrid((tmp, tmp))
         self.pos = th.stack((x, -y, th.zeros_like(x)), 2)
@@ -71,7 +73,7 @@ class Microfacet:
         return vec
 
     def getDir(self, pos):
-        pos = th.from_numpy(pos).cuda()
+        pos = th.from_numpy(pos).to(device)
         vec = (pos - self.pos).permute(2,0,1).unsqueeze(0).expand(self.N,-1,-1,-1)
         return self.normalize(vec), (vec**2).sum(1, keepdim=True).expand(-1,3,-1,-1)
 
@@ -144,7 +146,7 @@ def png2tex(fn):
         specular = png[:,res*3:res*4,:]
         tex = th.cat((tex,th.from_numpy(specular)),2)
     tex = tex * 2 - 1
-    return tex.permute(2,0,1).unsqueeze(0).cuda(), res
+    return tex.permute(2,0,1).unsqueeze(0).to(device), res
 
 def tex2png(tex, fn, isVertical=False):
     isSpecular = False
@@ -191,7 +193,7 @@ def renderTex(fn_tex, res, size, lp, cp, L, fn_im):
         exit()
     renderObj = Microfacet(res=tex_res, size=size)
     im = renderObj.eval(textures, lightPos=lp, \
-        cameraPos=cp, light=th.from_numpy(L).cuda())
+        cameraPos=cp, light=th.from_numpy(L).to(device))
     im = gyApplyGamma(gyTensor2Array(im[0,:].permute(1,2,0)), 1/2.2)
     im = gyArray2PIL(im)
     if res < tex_res:

@@ -2,6 +2,8 @@ import os
 import torch as th
 from torch.autograd import Variable
 
+device = th.device("cuda:0" if th.cuda.is_available() else "cpu")
+
 def init_global_noise(imres, init_from):
      global noises
 
@@ -39,19 +41,19 @@ def init_global_noise(imres, init_from):
                print('Can not find noise vector ', init_from)
                exit()
 
-     noise_4_2 = Variable(noise_4_2.cuda(), requires_grad=True)
-     noise_8_1 = Variable(noise_8_1.cuda(), requires_grad=True)
-     noise_8_2 = Variable(noise_8_2.cuda(), requires_grad=True)
-     noise_16_1 = Variable(noise_16_1.cuda(), requires_grad=True)
-     noise_16_2 = Variable(noise_16_2.cuda(), requires_grad=True)
-     noise_32_1 = Variable(noise_32_1.cuda(), requires_grad=True)
-     noise_32_2 = Variable(noise_32_2.cuda(), requires_grad=True)
-     noise_64_1 = Variable(noise_64_1.cuda(), requires_grad=True)
-     noise_64_2 = Variable(noise_64_2.cuda(), requires_grad=True)
-     noise_128_1 = Variable(noise_128_1.cuda(), requires_grad=True)
-     noise_128_2 = Variable(noise_128_2.cuda(), requires_grad=True)
-     noise_256_1 = Variable(noise_256_1.cuda(), requires_grad=True)
-     noise_256_2 = Variable(noise_256_2.cuda(), requires_grad=True)
+     noise_4_2 = Variable(noise_4_2.to(device), requires_grad=True)
+     noise_8_1 = Variable(noise_8_1.to(device), requires_grad=True)
+     noise_8_2 = Variable(noise_8_2.to(device), requires_grad=True)
+     noise_16_1 = Variable(noise_16_1.to(device), requires_grad=True)
+     noise_16_2 = Variable(noise_16_2.to(device), requires_grad=True)
+     noise_32_1 = Variable(noise_32_1.to(device), requires_grad=True)
+     noise_32_2 = Variable(noise_32_2.to(device), requires_grad=True)
+     noise_64_1 = Variable(noise_64_1.to(device), requires_grad=True)
+     noise_64_2 = Variable(noise_64_2.to(device), requires_grad=True)
+     noise_128_1 = Variable(noise_128_1.to(device), requires_grad=True)
+     noise_128_2 = Variable(noise_128_2.to(device), requires_grad=True)
+     noise_256_1 = Variable(noise_256_1.to(device), requires_grad=True)
+     noise_256_2 = Variable(noise_256_2.to(device), requires_grad=True)
 
      noises = [noise_4_2,  noise_8_1,  noise_8_2,  noise_16_1, noise_16_2,
               noise_32_1, noise_32_2, noise_64_1, noise_64_2, noise_128_1, noise_128_2, noise_256_1, noise_256_2]

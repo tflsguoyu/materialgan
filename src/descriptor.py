@@ -3,6 +3,8 @@ import torch as th
 import torch.nn as nn
 import torch.nn.functional as F
 
+device = th.device("cuda:0" if th.cuda.is_available() else "cpu")
+
 # class FeatureLoss(th.nn.Module):
 
 #   def __init__(self, dir, w):
@@ -10,7 +12,7 @@ import torch.nn.functional as F
 
 #       # get VGG19 feature network in evaluation mode
 #       self.net = vgg19(True).features
-#       self.net.eval().cuda()
+#       self.net.eval().to(device)
 
 #       # change max pooling to average pooling
 #       # for i, x in enumerate(self.net):
@@ -50,7 +52,7 @@ class StyleLoss(th.nn.Module):
       super(StyleLoss, self).__init__()
 
       # get VGG19 feature network in evaluation mode
-      self.net = vgg19(True).features.cuda()
+      self.net = vgg19(True).features.to(device)
       self.net.eval()
 
       # change max pooling to average pooling
@@ -99,7 +101,7 @@ class StyleLoss(th.nn.Module):
 
 #         self.net = VGG(pool='avg')
 #         self.net.load_state_dict(th.load(dir))
-#         if gpu > -1: self.net = self.net.cuda()
+#         if gpu > -1: self.net = self.net.to(device)
 
 #         self.layer = ['p1','p2','p3','p4','p5']
 #         self.weights = [1./64, 1./128, 1./256, 1./512, 1./512]
@@ -126,7 +128,7 @@ class FeatureLoss(th.nn.Module):
 
         self.net = VGG()
         self.net.load_state_dict(th.load(dir))
-        self.net.eval().cuda()
+        self.net.eval().to(device)
 
         # self.layer = ['r11','r12','r33','r43']
         self.layer = ['r11','r12','r32','r42']
