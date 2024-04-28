@@ -16,7 +16,10 @@ In ACM Transactions on Graphics (SIGGRAPH Asia 2020).
 ## Our codes moved to a new repo
 [https://github.com/tflsguoyu/svbrdf-diff-renderer](https://github.com/tflsguoyu/svbrdf-diff-renderer)
 
-## Overview
+## Python dependencis
+numpy, torch, torchvision, matplotlib, scikit-image, ipython, tqdm, kornia
+
+## GAN training
 We don't provide the codes for GAN training, please refer to [StyleGAN2](https://github.com/NVlabs/stylegan2).
 
 ## Pretrained model
