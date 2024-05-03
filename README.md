@@ -15,7 +15,7 @@ In ACM Transactions on Graphics (SIGGRAPH Asia 2020).
 [[Dataset](https://drive.google.com/file/d/1ShQ085ln2xRqPJVF1OQETFQlMYCgoep5/view?usp=sharing)]
 
 ## Step by step turotial
-- Create conda environment, with python dependencis: numpy, torch, torchvision, matplotlib, scikit-image, ipython, tqdm, kornia. (Tested on Numpy3.10, Torch2.3 with CUDA11.8, other versions should also work.)
+- Create conda environment, with python dependencis: numpy, torch, torchvision, matplotlib, scikit-image, ipython, tqdm, kornia. (Tested on Python3.10, Torch2.3 with CUDA11.8, other versions should also work.)
 - `git clone https://github.com/tflsguoyu/materialgan.git`
 - `cd materialgan`
 - Download all the checkpoints to `data/pretrain`: 
