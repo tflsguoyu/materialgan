@@ -12,7 +12,6 @@ In ACM Transactions on Graphics (SIGGRAPH Asia 2020).
 [[Poster](https://github.com/tflsguoyu/materialgan_poster/blob/master/materialgan_poster.pdf)]
 [Fastforward on Siggraph Asia 2020 ([Video](https://youtu.be/fD6CTb1DlbE))([Slides](https://www.dropbox.com/s/qi594y27dqa7irf/materialgan_ff.pptx?dl=0))] \
 [Presentation on Siggraph Asia 2020 ([Video](https://youtu.be/CrAoVsJf0Zw))([Slides](https://www.dropbox.com/s/zj2mhrminoamrdg/materialgan_main.pptx?dl=0))]
-[[Dataset](https://drive.google.com/file/d/1ShQ085ln2xRqPJVF1OQETFQlMYCgoep5/view?usp=sharing)]
 
 ## Step by step turotial
 - Create conda environment, with python dependencis: numpy, torch, torchvision, matplotlib, scikit-image, ipython, tqdm, kornia. (Tested on Python3.10, Torch2.3 with CUDA11.8, other versions should also work.)
@@ -26,7 +25,7 @@ In ACM Transactions on Graphics (SIGGRAPH Asia 2020).
 [`vgg_conv.pt`](https://www.dropbox.com/scl/fi/hp8bxxyejkw7d9a9gxxhc/vgg_conv.pt?rlkey=pbdqgh8huhdpnihwgdhn2a08v&st=r14omjo7&dl=0)
 - `python run.py`
 - Check the output in `data/output`
-- For more real captured data, please download [[Dataset](https://drive.google.com/file/d/1ShQ085ln2xRqPJVF1OQETFQlMYCgoep5/view?usp=sharing)].
+- For more real captured data, please download [[Dataset](https://drive.google.com/file/d/1L8uaul7kFE6GXD1V4jMM62JjWD9jFNtW/view?usp=sharing)].
 - To capture your own data, please refer to the input folder `data/in/real_cards-blue`. Calibrated camera position and light position in world space ([0,0,0] is the center of the image and z is the normal direction) are needed; `image_size` is the real size of the captured material in cm, and you can keep the `light_power` the same.
 
 ## Notes 
