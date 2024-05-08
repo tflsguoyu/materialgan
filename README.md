@@ -1,3 +1,5 @@
+(Please check our new repo: [svbrdf-diff-renderer](https://github.com/tflsguoyu/svbrdf-diff-renderer))
+
 # MaterialGAN: Reflectance Capture using a Generative SVBRDF Model
 
 [Yu Guo](https://tflsguoyu.github.io/), Cameron Smith, [Miloš Hašan](http://miloshasan.net/), [Kalyan Sunkavalli](http://www.kalyans.org/) and [Shuang Zhao](https://shuangz.com/). 
