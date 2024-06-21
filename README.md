@@ -1,4 +1,4 @@
-(Please check our new repo: [svbrdf-diff-renderer](https://github.com/tflsguoyu/svbrdf-diff-renderer))
+## (Please check our new repo: [svbrdf-diff-renderer](https://github.com/tflsguoyu/svbrdf-diff-renderer))
 
 # MaterialGAN: Reflectance Capture using a Generative SVBRDF Model
 
